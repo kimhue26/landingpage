@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển Sinh Ngành Công Nghệ Thông Tin PTIT 2026-2027</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #FFFFFF; /* White background */
+        }
+        .section-padding {
+            padding: 4rem 1rem; /* Default padding for sections */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 8rem 4rem;
+            }
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Custom colors for Tailwind */
+        .bg-ptit-red { background-color: #D72A24; }
+        .text-ptit-red { color: #D72A24; }
+        .border-ptit-red { border-color: #D72A24; }
+
+        .bg-ptit-coral { background-color: #E56A65; }
+        .hover-bg-ptit-coral:hover { background-color: #E56A65; }
+
+        .bg-ptit-dark-blue { background-color: #12315C; }
+        .text-ptit-dark-blue { color: #12315C; }
+
+        .bg-ptit-beige { background-color: #EBDCC5; }
+        .text-ptit-beige { color: #EBDCC5; }
+
+        .text-ptit-gold { color: #FFE88F; }
+
+        .btn-primary {
+            @apply inline-block px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105;
+        }
+        .input-field {
+            @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E56A65] transition duration-200; /* Coral focus ring */
+        }
+        .form-message {
+            @apply text-sm mt-2;
+        }
+    </style>
+</head>
+<body class="text-ptit-dark-blue">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo and text "PTIT" added here -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://i.postimg.cc/6QyNQphZ/logo.webp" alt="Logo PTIT" class="h-10">
+                <span class="text-2xl font-bold text-ptit-red">PTIT</span>
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#gioi-thieu" class="text-gray-600 hover:text-ptit-red font-medium transition duration-200">Giới thiệu</a></li>
+                <li><a href="#chuong-trinh" class="text-gray-600 hover:text-ptit-red font-medium transition duration-200">Chương trình</a></li>
+                <li><a href="#tuyen-sinh" class="text-gray-600 hover:text-ptit-red font-medium transition duration-200">Tuyển sinh</a></li>
+                <li><a href="#doi-song" class="text-gray-600 hover:text-ptit-red font-medium transition duration-200">Chia sẻ của sinh viên</a></li>
+                <li><a href="#lien-he" class="btn-primary bg-ptit-coral hover-bg-ptit-coral py-2 px-5">Đăng ký ngay</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#gioi-thieu" class="text-gray-600 hover:text-ptit-red font-medium">Giới thiệu</a></li>
+                <li><a href="#chuong-trinh" class="text-gray-600 hover:text-ptit-red font-medium">Chương trình</a></li>
+                <li><a href="#tuyen-sinh" class="text-gray-600 hover:text-ptit-red font-medium">Tuyển sinh</a></li>
+                <li><a href="#doi-song" class="text-gray-600 hover:text-ptit-red font-medium">Chia sẻ của sinh viên</a></li>
+                <li><a href="#lien-he" class="btn-primary bg-ptit-coral hover-bg-ptit-coral py-2 px-5">Đăng ký ngay</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-ptit-red text-white flex items-center justify-center min-h-screen section-padding overflow-hidden">
+        <!-- Updated with the direct image URL from the user -->
+        <div class="absolute inset-0 opacity-20" style="background-image: url('https://i.postimg.cc/65YqPTbJ/nh-n-n.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                KIẾN TẠO TƯƠNG LAI SỐ CÙNG CÔNG NGHỆ THÔNG TIN PTIT
+            </h1>
+            <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in-up">
+                Chào đón các bạn thí sinh tiềm năng đến với chương trình tuyển sinh ngành Công nghệ Thông tin tại Học viện Công nghệ Bưu chính Viễn thông năm học 2026-2027!
+            </p>
+            <a href="#lien-he" class="btn-primary bg-ptit-coral hover-bg-ptit-coral animate-zoom-in">Đăng Ký Tư Vấn Ngay</a>
+        </div>
+    </section>
+
+    <!-- Giới thiệu (About PTIT) Section -->
+    <section id="gioi-thieu" class="bg-white section-padding">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-red mb-6">Về Học viện Công nghệ Bưu chính Viễn thông</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto text-ptit-dark-blue">
+                Học viện Công nghệ Bưu chính Viễn thông (PTIT) là một trong 05 cơ sở giáo dục đại học trọng điểm quốc gia về kỹ thuật và công nghệ tại Việt Nam, chuyên sâu trong lĩnh vực công nghệ thông tin và truyền thông. Với lịch sử lâu đời và đội ngũ giảng viên uy tín, PTIT cam kết mang đến môi trường học tập hiện đại, chất lượng cao, đào tạo nguồn nhân lực chất lượng cho kỷ nguyên số.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-6 bg-ptit-beige rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-dark-blue mb-3">Đội Ngũ Giảng Viên</h3>
+                    <p class="text-ptit-dark-blue">Hàng trăm giáo sư, tiến sĩ, chuyên gia giàu kinh nghiệm trong và ngoài nước.</p>
+                </div>
+                <div class="p-6 bg-ptit-beige rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-dark-blue mb-3">Cơ Sở Vật Chất</h3>
+                    <p class="text-ptit-dark-blue">Phòng lab hiện đại, thư viện số, không gian học tập sáng tạo.</p>
+                </div>
+                <div class="p-6 bg-ptit-beige rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-dark-blue mb-3">Cơ Hội Việc Làm</h3>
+                    <p class="text-ptit-dark-blue">Mạng lưới cựu sinh viên rộng khắp, tỷ lệ sinh viên có việc làm cao sau tốt nghiệp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chương trình đào tạo (Programs Offered) Section -->
+    <section id="chuong-trinh" class="bg-ptit-dark-blue text-white section-padding">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-gold mb-6">Chương Trình Đào Tạo Ngành Công Nghệ Thông Tin</h2>
+            <p class="text-lg mb-10 max-w-3xl mx-auto text-ptit-beige">
+                Ngành CNTT tại PTIT cung cấp các chuyên ngành trọng điểm, kết hợp lý thuyết và thực tế, giúp sinh viên phát triển toàn diện và chuyên sâu.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white text-ptit-dark-blue p-6 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-red mb-3">Mạng máy tính và truyền thông dữ liệu</h3>
+                    <p class="text-ptit-dark-blue">Thiết kế, triển khai và quản lý cơ sở hạ tầng mạng, hệ thống truyền thông hiện đại.</p>
+                </div>
+                <div class="bg-white text-ptit-dark-blue p-6 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-red mb-3">Công nghệ phần mềm</h3>
+                    <p class="text-ptit-dark-blue">Nghiên cứu, phát triển các giải pháp phần mềm, ứng dụng và hệ thống thông minh.</p>
+                </div>
+                <div class="bg-white text-ptit-dark-blue p-6 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
+                    <h3 class="text-xl font-semibold text-ptit-red mb-3">Hệ thống thông tin</h3>
+                    <p class="text-ptit-dark-blue">Phân tích, thiết kế, triển khai và quản lý các hệ thống thông tin phục vụ quản lý, kinh doanh.</p>
+                </div>
+                <!-- Removed other specializations as per request -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Thông tin tuyển sinh (Admissions Info) Section -->
+    <section id="tuyen-sinh" class="bg-white section-padding">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-red mb-6">Thông Tin Tuyển Sinh 2026-2027</h2>
+            <p class="text-lg mb-10 max-w-3xl mx-auto text-ptit-dark-blue">
+                Nắm rõ các mốc thời gian và yêu cầu để chuẩn bị tốt nhất cho hành trình vào PTIT.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-ptit-dark-blue p-8 rounded-lg shadow-md text-left">
+                    <h3 class="text-2xl font-bold text-ptit-gold mb-4">Các Phương Thức Xét Tuyển</h3>
+                    <ul class="list-disc list-inside text-ptit-beige space-y-2">
+                        <li>Xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT năm 2026.</li>
+                        <li>Xét tuyển kết hợp kết quả học tập THPT và các chứng chỉ/giải thưởng (SAT, IELTS, Học sinh giỏi cấp tỉnh/quốc gia,...).</li>
+                        <li>Tuyển thẳng theo quy định của Bộ Giáo dục và Đào tạo.</li>
+                        <li>Các phương thức khác (sẽ được công bố chi tiết sau).</li>
+                    </ul>
+                </div>
+                <div class="bg-ptit-dark-blue p-8 rounded-lg shadow-md text-left">
+                    <h3 class="text-2xl font-bold text-ptit-gold mb-4">Mốc Thời Gian Quan Trọng (Dự kiến)</h3>
+                    <ul class="list-disc list-inside text-ptit-beige space-y-2">
+                        <li>Tháng 3 - Tháng 5/2026: Công bố đề án tuyển sinh chi tiết và các phương thức xét tuyển sớm.</li>
+                        <li>Tháng 5 - Tháng 6/2026: Mở cổng đăng ký xét tuyển sớm.</li>
+                        <li>Tháng 7/2026: Kỳ thi tốt nghiệp THPT Quốc gia 2026.</li>
+                        <li>Tháng 8/2026: Công bố kết quả xét tuyển theo các phương thức.</li>
+                        <li>Tháng 9/2026: Nhập học và bắt đầu năm học mới.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="#lien-he" class="btn-primary bg-ptit-coral hover-bg-ptit-coral">Nhận Thông Tin Chi Tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đời sống sinh viên & Cơ sở vật chất (Student Life & Facilities) Section -->
+    <section id="doi-song" class="bg-ptit-beige section-padding">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-red mb-6">Trải Nghiệm Đời Sống Sinh Viên Đầy Màu Sắc</h2>
+            <p class="text-lg mb-10 max-w-3xl mx-auto text-ptit-dark-blue">
+                PTIT không chỉ là nơi học tập mà còn là môi trường lý tưởng để bạn phát triển bản thân toàn diện.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- Image of a modern lab -->
+                    <img src="https://i.postimg.cc/pTfXJd5S/ph-ng-ab.jpg" alt="Phòng Lab Hiện Đại" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-ptit-red mb-2">Hệ thống phòng Lab hiện đại</h3>
+                        <p class="text-ptit-dark-blue">Trang bị đầy đủ các thiết bị, công nghệ tiên tiến phục vụ học tập và nghiên cứu.</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- Image of students participating in an extracurricular activity -->
+                    <img src="https://i.postimg.cc/Y9hTtDMz/Ngo-i-kh-a.jpg" alt="Hoạt Động Ngoại Khóa" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-ptit-red mb-2">Đa dạng CLB & Hoạt động</h3>
+                        <p class="text-ptit-dark-blue">Phát triển kỹ năng mềm, giao lưu, kết nối với hàng chục câu lạc bộ học thuật, văn hóa, thể thao.</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <!-- Image of a modern library/study space -->
+                    <img src="https://i.postimg.cc/vm6mDhYb/Th-vi-n.jpg" alt="Thư Viện Số" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-ptit-red mb-2">Thư viện và không gian học tập</h3>
+                        <p class="text-ptit-dark-blue">Thư viện rộng lớn với nguồn tài liệu phong phú, không gian tự học thoải mái.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-ptit-red mb-8">Cảm Nhận Từ Sinh Viên & Cựu Sinh Viên</h3>
+                <div class="relative overflow-hidden">
+                    <div id="testimonials-carousel" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="flex-none w-full md:w-1/2 lg:w-1/3 p-4 mx-auto">
+                            <div class="bg-white p-8 rounded-lg shadow-lg text-left border-t-4 border-ptit-red">
+                                <p class="italic text-ptit-dark-blue mb-4">"PTIT đã trang bị cho tôi những kiến thức và kỹ năng vững chắc để tự tin bước vào ngành CNTT đầy cạnh tranh. Cảm ơn các thầy cô và bạn bè tại Học viện!"</p>
+                                <p class="font-semibold text-ptit-red">- Nguyễn Văn A, Cựu Sinh viên Kỹ thuật Phần mềm</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="flex-none w-full md:w-1/2 lg:w-1/3 p-4 mx-auto">
+                            <div class="bg-white p-8 rounded-lg shadow-lg text-left border-t-4 border-ptit-red">
+                                <p class="italic text-ptit-dark-blue mb-4">"Môi trường học tập năng động, nhiều hoạt động ngoại khóa giúp tôi phát triển toàn diện. Ngành Khoa học Dữ liệu ở đây thực sự rất tiềm năng!"</p>
+                                <p class="font-semibold text-ptit-red">- Lê Thị B, Sinh viên Khoa học Dữ liệu</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="flex-none w-full md:w-1/2 lg:w-1/3 p-4 mx-auto">
+                            <div class="bg-white p-8 rounded-lg shadow-lg text-left border-t-4 border-ptit-red">
+                                <p class="italic text-ptit-dark-blue mb-4">"PTIT có những giảng viên rất tận tâm và kiến thức chuyên sâu. Mình đã học được rất nhiều điều giá trị từ họ."</p>
+                                <p class="font-semibold text-ptit-red">- Trần C, Cựu Sinh viên An toàn Thông tin</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-y-0 left-0 flex items-center">
+                        <button id="carousel-prev" class="bg-ptit-red text-white p-2 rounded-full shadow-lg hover:bg-[#A9221F] focus:outline-none focus:ring-2 focus:ring-[#E56A65] -ml-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                    </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center">
+                        <button id="carousel-next" class="bg-ptit-red text-white p-2 rounded-full shadow-lg hover:bg-[#A9221F] focus:outline-none focus:ring-2 focus:ring-[#E56A65] -mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Câu hỏi thường gặp (FAQ) Section -->
+    <section id="faq" class="bg-white section-padding">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-red mb-6">Các Câu Hỏi Thường Gặp</h2>
+            <div class="max-w-3xl mx-auto mt-10">
+                <div class="mb-4 rounded-lg shadow-md border border-gray-200">
+                    <button class="w-full flex justify-between items-center p-5 bg-ptit-beige rounded-t-lg focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-lg text-ptit-dark-blue">1. Ngành Công nghệ Thông tin tại PTIT có những chuyên ngành nào?</span>
+                        <svg class="w-5 h-5 text-ptit-red transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-ptit-dark-blue text-left">
+                        Ngành Công nghệ Thông tin tại PTIT hiện có 03 chuyên ngành chính: Mạng máy tính và truyền thông dữ liệu, Công nghệ phần mềm, và Hệ thống thông tin.
+                    </div>
+                </div>
+                <div class="mb-4 rounded-lg shadow-md border border-gray-200">
+                    <button class="w-full flex justify-between items-center p-5 bg-ptit-beige rounded-t-lg focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-lg text-ptit-dark-blue">2. PTIT có những phương thức xét tuyển nào cho năm 2026-2027?</span>
+                        <svg class="w-5 h-5 text-ptit-red transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-ptit-dark-blue text-left">
+                        Dự kiến các phương thức xét tuyển bao gồm: Xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT, xét tuyển kết hợp kết quả học tập THPT và các chứng chỉ/giải thưởng, tuyển thẳng theo quy định của Bộ GD&ĐT, và các phương thức khác sẽ được công bố sau.
+                    </div>
+                </div>
+                <div class="mb-4 rounded-lg shadow-md border border-gray-200">
+                    <button class="w-full flex justify-between items-center p-5 bg-ptit-beige rounded-t-lg focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-lg text-ptit-dark-blue">3. Cơ hội việc làm sau khi tốt nghiệp ngành CNTT tại PTIT là gì?</span>
+                        <svg class="w-5 h-5 text-ptit-red transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-ptit-dark-blue text-left">
+                        Sinh viên tốt nghiệp ngành CNTT từ PTIT có cơ hội việc làm rộng mở tại các công ty công nghệ lớn, tập đoàn viễn thông, ngân hàng, chính phủ, và có thể đảm nhiệm các vị trí như Kỹ sư phần mềm, Chuyên viên phân tích dữ liệu, Chuyên gia an ninh mạng, Lập trình viên AI, Quản trị mạng,...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đăng ký & Liên hệ (Contact/Registration) Section -->
+    <section id="lien-he" class="bg-ptit-red text-white section-padding">
+        <div class="container mx-auto text-center max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-ptit-gold mb-6">Đăng Ký Nhận Tư Vấn Tuyển Sinh</h2>
+            <p class="text-lg mb-10 opacity-90">
+                Hãy để lại thông tin của bạn để nhận được tư vấn chi tiết nhất về các chương trình đào tạo, phương thức tuyển sinh và cơ hội tại PTIT.
+            </p>
+            <form id="registration-form" class="bg-white p-8 rounded-lg shadow-xl text-ptit-dark-blue">
+                <div class="mb-4 text-left">
+                    <label for="full-name" class="block text-ptit-dark-blue text-sm font-bold mb-2">Họ và tên <span class="text-ptit-red">*</span></label>
+                    <input type="text" id="full-name" name="full-name" class="input-field" placeholder="Nguyễn Văn A" required>
+                    <p id="full-name-error" class="form-message text-ptit-red hidden"></p>
+                </div>
+                <div class="mb-4 text-left">
+                    <label for="email" class="block text-ptit-dark-blue text-sm font-bold mb-2">Email <span class="text-ptit-red">*</span></label>
+                    <input type="email" id="email" name="email" class="input-field" placeholder="email@example.com" required>
+                    <p id="email-error" class="form-message text-ptit-red hidden"></p>
+                </div>
+                <div class="mb-4 text-left">
+                    <label for="phone" class="block text-ptit-dark-blue text-sm font-bold mb-2">Số điện thoại <span class="text-ptit-red">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="input-field" placeholder="09xxxxxxxx" required pattern="[0-9]{10}">
+                    <p id="phone-error" class="form-message text-ptit-red hidden"></p>
+                </div>
+                <div class="mb-6 text-left">
+                    <label for="message" class="block text-ptit-dark-blue text-sm font-bold mb-2">Nội dung câu hỏi (Nếu có)</label>
+                    <textarea id="message" name="message" rows="4" class="input-field" placeholder="Bạn có câu hỏi nào khác không?"></textarea>
+                </div>
+                <button type="submit" class="btn-primary bg-ptit-coral hover-bg-ptit-coral w-full">Gửi Đăng Ký</button>
+                <div id="form-submission-message" class="mt-4 p-3 rounded-lg text-center hidden" role="alert"></div>
+            </form>
+            <p class="mt-8 text-lg opacity-90">Hoặc liên hệ trực tiếp:</p>
+            <p class="text-xl font-bold opacity-90 mb-4">Điện thoại: 024.3351.2252</p>
+            <p class="text-xl font-bold opacity-90">Email: tuyensinh@ptit.edu.vn</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ptit-dark-blue text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-4">&copy; 2026 Học viện Công nghệ Bưu chính Viễn thông. Bảo lưu mọi quyền.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-ptit-beige hover:text-white transition duration-200">Facebook</a>
+                <a href="#" class="text-ptit-beige hover:text-white transition duration-200">YouTube</a>
+                <a href="#" class="text-ptit-beige hover:text-white transition duration-200">Zalo</a>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">Địa chỉ: 122 Hoàng Quốc Việt, Cầu Giấy, Hà Nội</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after clicking a link
+                if (document.getElementById('mobile-menu').classList.contains('flex')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    document.getElementById('mobile-menu').classList.remove('flex');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Form Validation and Submission (Client-side only for this example)
+        const registrationForm = document.getElementById('registration-form');
+        const fullNameInput = document.getElementById('full-name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const submissionMessage = document.getElementById('form-submission-message');
+
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission
+
+            let isValid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll('.form-message').forEach(el => {
+                el.textContent = '';
+                el.classList.add('hidden');
+            });
+            submissionMessage.classList.add('hidden');
+
+            // Validate Full Name
+            if (fullNameInput.value.trim() === '') {
+                document.getElementById('full-name-error').textContent = 'Họ và tên không được để trống.';
+                document.getElementById('full-name-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Validate Email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value.trim() === '') {
+                document.getElementById('email-error').textContent = 'Email không được để trống.';
+                document.getElementById('email-error').classList.remove('hidden');
+                isValid = false;
+            } else if (!emailPattern.test(emailInput.value.trim())) {
+                document.getElementById('email-error').textContent = 'Email không hợp lệ.';
+                document.getElementById('email-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Validate Phone
+            const phonePattern = /^\d{10}$/; // Assumes 10 digits for phone number
+            if (phoneInput.value.trim() === '') {
+                document.getElementById('phone-error').textContent = 'Số điện thoại không được để trống.';
+                document.getElementById('phone-error').classList.remove('hidden');
+                isValid = false;
+            } else if (!phonePattern.test(phoneInput.value.trim())) {
+                document.getElementById('phone-error').textContent = 'Số điện thoại không hợp lệ (ví dụ: 0912345678).';
+                document.getElementById('phone-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Simulate form submission success
+                submissionMessage.textContent = 'Đăng ký của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm nhất.';
+                submissionMessage.classList.remove('hidden');
+                submissionMessage.classList.add('bg-green-100', 'text-green-800'); // Kept original green/red for status messages
+                registrationForm.reset(); // Clear the form
+
+                // In a real application, you would send this data to a server using fetch()
+                console.log('Form data:', {
+                    fullName: fullNameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    message: document.getElementById('message').value.trim()
+                });
+
+            } else {
+                submissionMessage.textContent = 'Vui lòng kiểm tra lại thông tin đăng ký.';
+                submissionMessage.classList.remove('hidden');
+                submissionMessage.classList.add('bg-red-100', 'text-red-800'); // Kept original green/red for status messages
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                answer.classList.add('block');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                answer.classList.remove('block');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Testimonial Carousel
+        const carousel = document.getElementById('testimonials-carousel');
+        const prevButton = document.getElementById('carousel-prev');
+        const nextButton = document.getElementById('carousel-next');
+        const testimonials = carousel.children;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            // Determine number of visible items based on screen width
+            let itemsPerView = 1;
+            if (window.innerWidth >= 1024) { // large screens
+                itemsPerView = 3;
+            } else if (window.innerWidth >= 768) { // medium screens
+                itemsPerView = 2;
+            }
+
+            // Calculate the max index to prevent going too far
+            const maxIndex = testimonials.length - itemsPerView;
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            }
+
+            // Calculate the transform value
+            // Ensure testimonials[0] exists before accessing offsetWidth
+            if (testimonials.length > 0) {
+                const itemWidth = testimonials[0].offsetWidth; // Get current width of one testimonial item
+                const gap = 32; // Corresponds to gap-8 (8*4=32px)
+                const transformValue = -currentIndex * (itemWidth + gap);
+                carousel.style.transform = `translateX(${transformValue}px)`;
+            }
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = Math.max(0, currentIndex - 1);
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            let itemsPerView = 1;
+            if (window.innerWidth >= 1024) {
+                itemsPerView = 3;
+            } else if (window.innerWidth >= 768) {
+                itemsPerView = 2;
+            }
+            currentIndex = Math.min(testimonials.length - itemsPerView, currentIndex + 1);
+            updateCarousel();
+        });
+
+        // Recalculate carousel position on window resize
+        window.addEventListener('resize', updateCarousel);
+        // Initial update when page loads
+        window.onload = updateCarousel;
+    </script>
+</body>
+</html>
